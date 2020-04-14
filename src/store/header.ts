@@ -1,6 +1,6 @@
 import { Reducer } from 'redux'
 
-import { Action, Actions } from '../actions/'
+import { Action, Actions } from 'actions'
 
 enum Headers {
   ONE = 'Hi React App!',

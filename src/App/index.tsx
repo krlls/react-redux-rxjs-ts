@@ -7,6 +7,7 @@ import { State } from 'store'
 import { Action, actionEmpty, Actions } from 'actions'
 import { Header } from 'components/Header'
 import { ReactLogo, ReduxLogo } from 'svg'
+import { ReduxObserble } from 'svg/reduxObservable'
 
 type TStateToProps = {
   header: string,
@@ -35,6 +36,9 @@ class AppCmp extends React.Component<TProps> {
               </div>
               <div className={styles.Title__logo}>
                 <ReduxLogo />
+              </div>
+              <div className={styles.Title__logo}>
+                <ReduxObserble />
               </div>
             </div>
             <button
