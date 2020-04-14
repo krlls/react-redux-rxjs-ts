@@ -14,13 +14,14 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "baseUrl": "./",
+    "skipLibCheck": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
       "*": ["*"]
     },
     "typeRoots": [
       "../types",
       "../node_modules/@types"
-    ],
-    "skipLibCheck": true
+    ]
   }
 }
