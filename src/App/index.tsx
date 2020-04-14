@@ -6,6 +6,7 @@ import styles from './app.scss'
 import { State } from 'store'
 import { Action, actionEmpty, Actions } from 'actions'
 import { Header } from 'components/Header'
+import { ReactLogo, ReduxLogo } from 'svg'
 
 type TStateToProps = {
   header: string,
@@ -28,6 +29,14 @@ class AppCmp extends React.Component<TProps> {
               <h1 className={styles.Title__h1}>
                 {header}
               </h1>
+            <div className={styles.Title__logo__container}>
+              <div className={styles.Title__logo}>
+                <ReactLogo />
+              </div>
+              <div className={styles.Title__logo}>
+                <ReduxLogo />
+              </div>
+            </div>
             <button
               className={styles.Title__button_hi}
               onClick={sendHi}
