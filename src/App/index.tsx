@@ -5,9 +5,9 @@ import styles from './app.scss'
 
 import { State } from 'store'
 import { Action, actionEmpty, Actions } from 'actions'
-import { Header } from 'Components/Header'
+import { Header } from 'components/Header'
 
-type TStateToprops = {
+type TStateToProps = {
   header: string,
 }
 
@@ -15,7 +15,7 @@ type TDispatchedProps = {
   sendHi(): Action,
 }
 
-type TProps = TStateToprops & TDispatchedProps
+type TProps = TStateToProps & TDispatchedProps
 
 class AppCmp extends React.Component<TProps> {
   render() {
@@ -28,7 +28,12 @@ class AppCmp extends React.Component<TProps> {
               <h1 className={styles.Title__h1}>
                 {header}
               </h1>
-            <button className={styles.Title__button_hi} onClick={sendHi}>Send Hi</button>
+            <button
+              className={styles.Title__button_hi}
+              onClick={sendHi}
+            >
+              Send Hi
+            </button>
           </div>
         </Header>
       </div>
@@ -36,7 +41,7 @@ class AppCmp extends React.Component<TProps> {
   }
 }
 
-const StateToProps = (state: State): TStateToprops => ({
+const stateToProps = (state: State): TStateToProps => ({
   header: state.headerState.header,
 })
 
@@ -44,4 +49,4 @@ const dispatchToProps: TDispatchedProps = {
   sendHi: (): Action => actionEmpty(Actions.SEND_HI),
 }
 
-export const App = connect(StateToProps, dispatchToProps)(AppCmp)
+export const App = connect(stateToProps, dispatchToProps)(AppCmp)
