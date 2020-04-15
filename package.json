@@ -44,7 +44,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot --config webpack.dev.js",
-    "build": "webpack --mode production --config webpack.prod.js",
+    "build:Relese": "webpack --mode production --config webpack.prod.js",
+    "build:GitHub": "webpack --mode production --config webpack.git.js",
     "lint": "tslint -p src",
     "lint-fix": "tslint -p src --fix"
   }
