@@ -1,6 +1,6 @@
 import configureMockStore, { MockStore } from 'redux-mock-store'
-import { of } from 'rxjs'
 import Axios from 'axios-observable'
+import { of } from 'rxjs'
 
 import { getReadmeEpic } from '../../src/epics'
 import { contentState, defState } from '../../src/store/header'
