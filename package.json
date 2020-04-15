@@ -2,6 +2,7 @@
   "name": "my-build-react",
   "version": "1.0.0",
   "description": "Astral-HR",
+  "homepage": "https://krlls.github.io/My-build-React/",
   "main": "index.ts",
   "author": "Ksmi",
   "license": "MIT",
