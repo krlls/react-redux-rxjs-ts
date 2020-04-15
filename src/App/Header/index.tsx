@@ -30,7 +30,7 @@ class HeaderCmp extends React.Component<OwnProps> {
   }
 
   renderButton = () => {
-    const { buttonOnClick} = this.props
+    const { buttonOnClick } = this.props
 
     return (
       <button

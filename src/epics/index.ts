@@ -19,14 +19,14 @@ const getReadmeEpic: EpicFunc = (action$, state) => action$.pipe(
   mergeMap(
     () => Axios.get('https://raw.githubusercontent.com/krlls/My-build-React/master/README.md')
       .pipe(
-        map(({data}) => action(Actions.GET_README_SUCCESS, data))
-      )
-  )
+        map(({ data }) => action(Actions.GET_README_SUCCESS, data)),
+      ),
+  ),
 )
 
 const epics = [
   testEpic,
-  getReadmeEpic
+  getReadmeEpic,
 ]
 
 export type EpicFunc = Epic<Action, Action, State>

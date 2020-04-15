@@ -34,7 +34,7 @@ class AppCmp extends React.Component<TProps> {
 
 const stateToProps = (state: State): TStateToProps => ({
   header: state.content.header,
-  content: state.content.data
+  content: state.content.data,
 })
 
 const dispatchToProps: TDispatchedProps = {

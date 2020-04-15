@@ -23,7 +23,6 @@ const store = createStore(rootReducer, composeEnhancers(
   applyMiddleware(...middlewares),
 ))
 
-
 epicMiddleware.run(rootEpic)
 
 ReactDOM.render(
