@@ -27,16 +27,6 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      {
-        test: /\.(jpg|jpeg|gif|png|svg)$/,
-        exclude: /node_modules/,
-        loader:'url-loader?limit=1024&name=assets/images/[name].[ext]'
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf)$/,
-        exclude: /node_modules/,
-        loader: 'url-loader?limit=1024&name=assets/fonts/[name].[ext]'
-      },
       {test: /\.svg$/, use: ['@svgr/webpack'] },
       { test: /\.scss$/, use: [
           MiniCssExtractPlugin.loader,
