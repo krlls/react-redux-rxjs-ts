@@ -48,7 +48,7 @@ describe('Store tests', () => {
   it('Set state after get README', () => {
     const data = 'Test'
 
-    expect(contentState(defState, action(Actions.GET_README_SUCCESS, data)))
+    expect(contentState(defState, action(Actions.GET_README_SUCCESS, 'dd')))
       .toEqual({ ...defState, data, })
   })
 })
