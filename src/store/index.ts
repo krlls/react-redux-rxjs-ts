@@ -8,6 +8,7 @@ export type State = Readonly<{
   content: TContentState,
 }>
 
+
 export const rootReducer = combineReducers<State, Action>({
   content: contentState,
 })

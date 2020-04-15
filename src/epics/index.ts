@@ -2,8 +2,8 @@ import { combineEpics, Epic, ofType } from 'redux-observable'
 import { mapTo, delay, tap, mergeMap, map, filter } from 'rxjs/operators'
 import Axios from  'axios-observable'
 
-import { action, actionEmpty, Action, Actions } from 'actions'
-import { State } from 'store'
+import { action, actionEmpty, Action, Actions } from '../actions'
+import { State } from '../store'
 
 const testEpic: EpicFunc = action$ => action$.pipe(
   ofType(Actions.SEND_HI),
@@ -13,7 +13,7 @@ const testEpic: EpicFunc = action$ => action$.pipe(
   mapTo(actionEmpty(Actions.TEST_EPIC)),
 )
 
-const getReadmeEpic: EpicFunc = (action$, state) => action$.pipe(
+export const getReadmeEpic: EpicFunc = (action$, state) => action$.pipe(
   ofType(Actions.GET_README),
   filter(() => !state.value.content.data.length),
   mergeMap(

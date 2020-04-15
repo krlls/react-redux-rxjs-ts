@@ -1,6 +1,6 @@
 import { Reducer } from 'redux'
 
-import { Action, Actions } from 'actions'
+import { Action, Actions } from '../actions'
 
 enum Headers {
   ONE = 'Hi React App!',
@@ -12,7 +12,7 @@ export type TContentState = Readonly<{
   data: string,
 }>
 
-const defState = {
+export const defState = {
   header: Headers.ONE,
   data: '',
 }
