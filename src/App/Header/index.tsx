@@ -37,7 +37,7 @@ class HeaderCmp extends React.Component<OwnProps> {
         className={styles.Title__button_hi}
         onClick={buttonOnClick}
       >
-        Send Hi
+        Send Hit
       </button>
     )
   }
