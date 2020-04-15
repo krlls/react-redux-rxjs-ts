@@ -1,6 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const PATH_SRC = path.resolve(__dirname, 'src')
 
@@ -10,6 +13,9 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/docs"),
     filename: "index_bundle.js"
+  },
+  optimization: {
+    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
   },
   module: {
     rules: [
@@ -21,7 +27,17 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+      {
+        test: /\.(jpg|jpeg|gif|png|svg)$/,
+        exclude: /node_modules/,
+        loader:'url-loader?limit=1024&name=assets/images/[name].[ext]'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=1024&name=assets/fonts/[name].[ext]'
+      },
+      {test: /\.svg$/, use: ['@svgr/webpack'] },
       { test: /\.scss$/, use: [
           MiniCssExtractPlugin.loader,
           {
@@ -51,11 +67,12 @@ module.exports = {
     port: 3000
   },
     plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: '[hash].css',
+      filename: 'styles.css',
       chunkFilename: '[id].css',
     }),
 ]

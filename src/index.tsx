@@ -7,7 +7,7 @@ import { createEpicMiddleware } from 'redux-observable'
 
 import { rootReducer, State } from 'store'
 import { rootEpic } from 'epics'
-import { Action } from 'actions'
+import { Action, actionEmpty, Actions } from 'actions'
 import { App } from './App'
 
 const composeEnhancers = composeWithDevTools({
@@ -23,6 +23,7 @@ const store = createStore(rootReducer, composeEnhancers(
   applyMiddleware(...middlewares),
 ))
 
+
 epicMiddleware.run(rootEpic)
 
 ReactDOM.render(
@@ -31,3 +32,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 )
+
+store.dispatch(actionEmpty(Actions.GET_README))

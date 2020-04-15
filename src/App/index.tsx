@@ -1,16 +1,16 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 
-import styles from './app.scss'
+// import styles from './app.scss'
 
 import { State } from 'store'
 import { Action, actionEmpty, Actions } from 'actions'
-import { Header } from 'components/Header'
-import { ReactLogo, ReduxLogo } from 'svg'
-import { ReduxObserble } from 'svg/reduxObservable'
+import { Header } from './Header'
+import { Readme } from './Readme'
 
 type TStateToProps = {
   header: string,
+  content: string,
 }
 
 type TDispatchedProps = {
@@ -21,41 +21,20 @@ type TProps = TStateToProps & TDispatchedProps
 
 class AppCmp extends React.Component<TProps> {
   render() {
-    const { header, sendHi } = this.props
+    const { header, sendHi, content } = this.props
 
     return (
       <div>
-        <Header>
-          <div className={styles.Title}>
-              <h1 className={styles.Title__h1}>
-                {header}
-              </h1>
-            <div className={styles.Title__logo__container}>
-              <div className={styles.Title__logo}>
-                <ReactLogo />
-              </div>
-              <div className={styles.Title__logo}>
-                <ReduxLogo />
-              </div>
-              <div className={styles.Title__logo}>
-                <ReduxObserble />
-              </div>
-            </div>
-            <button
-              className={styles.Title__button_hi}
-              onClick={sendHi}
-            >
-              Send Hi
-            </button>
-          </div>
-        </Header>
+        <Header headerTitle={header} buttonOnClick={sendHi} />
+        <Readme content={content}/>
       </div>
     )
   }
 }
 
 const stateToProps = (state: State): TStateToProps => ({
-  header: state.headerState.header,
+  header: state.content.header,
+  content: state.content.data
 })
 
 const dispatchToProps: TDispatchedProps = {

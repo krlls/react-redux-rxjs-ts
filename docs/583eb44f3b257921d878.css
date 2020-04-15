@@ -1,4 +1,0 @@
-.app--Title--1UVNh{display:flex;flex-direction:column;align-items:center}.app--Title__h1--3bQrT{color:#61dafb;margin:0}.app--Title__logo--3-gHu{margin:25px;width:200px;animation:app--pulse--2GgVp 3s infinite ease-in-out}.app--Title__logo__container--1zjgx{display:flex;flex-direction:row;margin:30px}.app--Title__button_hi--3ZeEU{height:50px;font-size:20px;padding:10px 25px;border-radius:5px;background-color:#61dafb;color:#000000;border:none;outline:none;transition:0.3s}.app--Title__button_hi--3ZeEU:hover{background-color:#ffffff;cursor:pointer}@keyframes app--pulse--2GgVp{from{transform:scale(0.9)}50%{transform:scale(1)}to{transform:scale(0.9)}}@keyframes app--rotate--pRGkq{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-.index--Header--2CXYV{background:#282c34;padding:50px}
-

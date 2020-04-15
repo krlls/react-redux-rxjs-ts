@@ -1,0 +1,10 @@
+.Readme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 980px;
+
+  &__content {
+    width: 100%;
+  }
+}

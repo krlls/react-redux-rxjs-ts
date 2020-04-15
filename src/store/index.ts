@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
 
-import { headerState, THeaderState } from './header'
+import { contentState, TContentState } from './header'
 
 import { Action } from '../actions'
 
 export type State = Readonly<{
-  headerState: THeaderState,
+  content: TContentState,
 }>
 
 export const rootReducer = combineReducers<State, Action>({
-  headerState,
+  content: contentState,
 })
