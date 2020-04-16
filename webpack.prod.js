@@ -51,11 +51,6 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".css", ".scss"],
     modules: [].concat(PATH_SRC, 'node_modules'),
   },
-  devServer: {
-    contentBase: path.join(__dirname, '/dist'),
-    compress: true,
-    port: 3000
-  },
     plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
