@@ -5,11 +5,11 @@ import { createStore } from 'redux'
 
 import { rootReducer } from 'store'
 import { rootEpic } from 'epics'
-import { composeEnhancersToStore, epicMiddleware } from './utils/storeUtils'
+import { storeMiddlewares, epicMiddleware } from './utils/storeUtils'
 import { actionEmpty, Actions } from 'actions'
 import { App } from './App'
 
-const store = createStore(rootReducer, composeEnhancersToStore)
+const store = createStore(rootReducer, storeMiddlewares)
 
 epicMiddleware.run(rootEpic)
 
