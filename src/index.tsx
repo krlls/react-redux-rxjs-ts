@@ -1,27 +1,15 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction'
-import { createEpicMiddleware } from 'redux-observable'
+import { createStore } from 'redux'
 
-import { rootReducer, State } from 'store'
+import { rootReducer } from 'store'
 import { rootEpic } from 'epics'
-import { Action, actionEmpty, Actions } from 'actions'
+import { composeEnhancersToStore, epicMiddleware } from './utils/storeUtils'
+import { actionEmpty, Actions } from 'actions'
 import { App } from './App'
 
-const composeEnhancers = composeWithDevTools({
-  // options like actionSanitizer, stateSanitizer
-})
-
-const epicMiddleware = createEpicMiddleware<Action, Action, State>({})
-const middlewares = [
-  epicMiddleware,
-]
-
-const store = createStore(rootReducer, composeEnhancers(
-  applyMiddleware(...middlewares),
-))
+const store = createStore(rootReducer, composeEnhancersToStore)
 
 epicMiddleware.run(rootEpic)
 
