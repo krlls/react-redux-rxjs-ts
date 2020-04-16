@@ -12,9 +12,9 @@ export namespace Actions {
   export const TEST_EPIC: 11 = 11
   export type TestEpic = AE<typeof TEST_EPIC>
 
-  export const GET_README: 'GET_README' = 'GET_README'
+  export const GET_README: 20 = 20
   export type GetReadme = AE<typeof GET_README>
-  export const GET_README_SUCCESS: 'GET_README_SUCCESS' = 'GET_README_SUCCESS'
+  export const GET_README_SUCCESS: 21 = 21
   export type GetReadmeSuccess = A<typeof GET_README_SUCCESS, any>
 }
 
