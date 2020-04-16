@@ -10,6 +10,7 @@ const PATH_SRC = path.resolve(__dirname, 'src')
 module.exports = {
   mode: 'production',
   entry: "./src/index.tsx",
+  performance: { hints: false },
   output: {
     path: path.join(__dirname, "/docs"),
     filename: "index_bundle.js"
