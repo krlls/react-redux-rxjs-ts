@@ -1,4 +1,4 @@
-# My-build-React
+# React-Redux-RxJs-TypeScript
 
 ![](./logo.png)
 
