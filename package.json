@@ -1,13 +1,12 @@
 {
-  "name": "my-build-react",
+  "name": "React-Redux-RxJs-TypeScript",
   "version": "1.0.0",
-  "description": "Astral-HR",
+  "description": "React, Redux, TypeScript, RxJs, Docker, Jest",
   "homepage": "https://github.com/krlls/React-Redux-RxJs-TypeScript.git#readme",
   "url": "https://github.com/krlls/React-Redux-RxJs-TypeScript.git",
   "main": "index.ts",
   "author": "Ksmi",
   "license": "AAL",
-  "private": true,
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
