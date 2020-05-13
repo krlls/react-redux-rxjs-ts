@@ -50,7 +50,7 @@ For autocorrection, you can do
 $ yarn lint-fix
 ```
 
-#Docker 
+# Docker 
 For build docker image run
 >The name of the docker image will be taken from the name of your application in packaje.json
 ```bash
