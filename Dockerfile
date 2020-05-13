@@ -1,9 +1,8 @@
 FROM node:12-alpine as build-stage
 
 WORKDIR /app
-COPY package*.json /app/
-RUN yarn
 COPY ./ /app/
+RUN yarn
 RUN yarn test
 RUN yarn build
 

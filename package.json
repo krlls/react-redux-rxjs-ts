@@ -62,6 +62,7 @@
     "dev": "webpack-dev-server --mode development --open --hot --config webpack.dev.js",
     "build": "webpack --mode production --config webpack.prod.js",
     "build:docker": "docker build -t $npm_package_name .",
+    "run:docker": "docker run -p 80:80 $npm_package_name",
     "test": "jest",
     "lint": "tslint -p src",
     "lint-fix": "tslint -p src --fix"
