@@ -8,6 +8,8 @@ module.exports = merge.smart(baseConfig, {
   devtool: "source-map",
   devServer: {
     compress: true,
-    port: 3000
+    open: true,
+    hot: true,
+    port: 3000,
   },
 })
