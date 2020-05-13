@@ -58,5 +58,9 @@ $ yarn build:docker
 ```
 And run image
 ```bash
+$ yarn run:docker
+```
+or
+```bash
 $ docker run -p 80:80 npm_package_name
 ```
