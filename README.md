@@ -4,9 +4,6 @@
 
 ## Install
 First, clone the repo via git:
-```bash
-yarn install
-```
     
 ```bash
 git clone https://github.com/krlls/My-build-React.git your-project-name
