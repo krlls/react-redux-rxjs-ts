@@ -24,33 +24,14 @@ Run these commands:
 $ yarn dev
 ```
 
-# Build
+## Build
 For build run this command
 
 ```bash
 $ yarn build
 ```
 
-## Test
-For test run this command
-
-```bash
-$ yarn test
-```
-
-# Lint
-For lint run this command
-
-```bash
-$ yarn lint
-```
-
-For autocorrection, you can do
-```bash
-$ yarn lint-fix
-```
-
-# Docker 
+## Docker 
 For build docker image run
 >The name of the docker image will be taken from the name of your application in packaje.json
 ```bash
@@ -63,4 +44,24 @@ $ yarn run:docker
 or
 ```bash
 $ docker run -p 80:80 npm_package_name
+```
+
+
+## Test
+For test run this command
+
+```bash
+$ yarn test
+```
+
+## Lint
+For lint run this command
+
+```bash
+$ yarn lint
+```
+
+For autocorrection, you can do
+```bash
+$ yarn lint-fix
 ```
