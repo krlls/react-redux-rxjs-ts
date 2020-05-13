@@ -1,12 +1,12 @@
 {
-  "name": "my-build-react",
+  "name": "React-Redux-RxJs-TypeScript",
   "version": "1.0.0",
-  "description": "Astral-HR",
-  "homepage": "https://krlls.github.io/My-build-React/",
+  "description": "React, Redux, TypeScript, RxJs, Docker, Jest",
+  "homepage": "https://github.com/krlls/React-Redux-RxJs-TypeScript.git#readme",
+  "url": "https://github.com/krlls/React-Redux-RxJs-TypeScript.git",
   "main": "index.ts",
   "author": "Ksmi",
   "license": "AAL",
-  "private": true,
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -43,7 +43,8 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -55,12 +56,11 @@
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
-    "rxjs": "^6.5.5",
-    "webpack-merge": "^4.2.2"
+    "rxjs": "^6.5.5"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot --config webpack.dev.js",
-    "build": "webpack --mode production --config webpack.prod.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "build:docker": "docker build -t $npm_package_name .",
     "run:docker": "docker run -p 80:80 $npm_package_name",
     "test": "jest",
