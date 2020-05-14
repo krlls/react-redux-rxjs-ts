@@ -22,8 +22,8 @@ module.exports = merge.smart(baseConfig, {
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: '[name].[hash].css',
-        chunkFilename: '[id].[hash].css',
+        filename: '[name].css',
+        chunkFilename: '[id].css',
       }),
     ]
 })
