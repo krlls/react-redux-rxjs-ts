@@ -1,5 +1,5 @@
 {
-  "name": "React-Redux-RxJs-TypeScript",
+  "name": "react-redux-rxjs-typescript",
   "version": "1.0.0",
   "description": "React, Redux, TypeScript, RxJs, Docker, Jest",
   "homepage": "https://github.com/krlls/React-Redux-RxJs-TypeScript.git#readme",
@@ -26,7 +26,7 @@
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
-    "jest": "^25.3.0",
+    "jest": "^26.0.1",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -34,7 +34,7 @@
     "redux-mock-store": "^1.5.4",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
-    "terser-webpack-plugin": "^2.3.5",
+    "terser-webpack-plugin": "^3.0.1",
     "ts-jest": "^25.3.1",
     "tslint": "^6.1.1",
     "tslint-config-airbnb": "^5.11.2",
@@ -43,6 +43,7 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
+    "webpack-dashboard": "^3.2.0",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   },
@@ -59,7 +60,7 @@
     "rxjs": "^6.5.5"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js",
+    "dev": "webpack-dashboard -- webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "build:docker": "docker build -t $npm_package_name .",
     "run:docker": "docker run -p 80:80 $npm_package_name",

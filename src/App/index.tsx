@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 
-// import styles from './app.scss'
+import './app.scss'
 
 import { State } from 'store'
 import { Action, actionEmpty, Actions } from 'actions'
