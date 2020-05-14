@@ -13,9 +13,23 @@ module.exports = {
         test: /\.tsx?$/, loader: 'awesome-typescript-loader',
         options: {configFileName: 'src/tsconfig.json'}
       },
-      { test: /\.(png|woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' },
-      {test: /\.svg$/, use: ['@svgr/webpack'] },
-      { test: /\.scss$/, use: [
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'assets/images',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'assets/fonts',
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
