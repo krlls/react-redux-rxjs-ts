@@ -1,5 +1,6 @@
 const path = require("path");
 const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -8,15 +9,21 @@ const baseConfig = require('./webpack.main.js');
 
 module.exports = merge.smart(baseConfig, {
   mode: 'production',
-  performance: { hints: false },
   output: {
     path: path.join(__dirname, "/docs"),
     filename: "index_bundle.js"
   },
   optimization: {
-    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new TerserPlugin(),
+      new OptimizeCSSAssetsPlugin({})
+    ],
   },
     plugins: [
-    new CleanWebpackPlugin(),
+      new CleanWebpackPlugin(),
+      new MiniCssExtractPlugin({
+        filename: '[name].[hash].css',
+        chunkFilename: '[id].[hash].css',
+      }),
     ]
 })

@@ -4,7 +4,7 @@ WORKDIR /app
 COPY ./ /app/
 RUN yarn
 RUN yarn test
-RUN yarn build
+RUN yarn build --prod
 
 
 FROM nginx:latest
