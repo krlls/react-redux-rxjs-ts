@@ -3,8 +3,9 @@ import * as React from 'react'
 import styles from './index.scss'
 
 import { Action } from 'actions'
-import { ReactLogo, ReduxLogo } from 'svg'
+import ReactLogo from 'svg/reactLogo.svg'
 import ReduxObserbleLogo from 'svg/reduxObservable.svg'
+import ReduxLogo from 'svg/reduxLogo.svg'
 
 type OwnProps = {
   headerTitle: string,
@@ -46,13 +47,13 @@ class HeaderCmp extends React.Component<OwnProps> {
     return (
       <div className={styles.Title__logo__container}>
         <div className={styles.Title__logo}>
-          <ReactLogo />
+          <img src={ReactLogo} alt={'react-logo'}/>
         </div>
         <div className={styles.Title__logo}>
-          <ReduxLogo />
+          <img src={ReduxLogo} alt={'redux-logo'}/>
         </div>
         <div className={styles.Title__logo}>
-          <ReduxObserbleLogo />
+          <img src={ReduxObserbleLogo} alt={'Redux-Obserble-logo'}/>
         </div>
       </div>
     )
