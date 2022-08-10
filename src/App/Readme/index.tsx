@@ -13,9 +13,7 @@ class ReadmeCmp extends React.Component<TOwnProps> {
     return (
       <div className={styles.Readme}>
         <div className={styles.Readme__content}>
-          <Markdown>
-            {content}
-          </Markdown>
+          <Markdown>{content}</Markdown>
         </div>
       </div>
     )

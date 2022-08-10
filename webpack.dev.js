@@ -1,10 +1,9 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const DashboardPlugin = require("webpack-dashboard/plugin");
 
 const baseConfig = require('./webpack.main.js');
 
-module.exports = merge.smart(baseConfig, {
+module.exports = merge(baseConfig, {
   mode: 'development',
   devtool: "source-map",
   devServer: {
@@ -18,6 +17,5 @@ module.exports = merge.smart(baseConfig, {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    new DashboardPlugin(),
   ]
 })

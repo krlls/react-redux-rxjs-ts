@@ -3,10 +3,10 @@ import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import { rootReducer } from 'store'
-import { rootEpic } from 'epics'
+import { rootReducer } from './store'
+import { rootEpic } from './epics'
+import { actionEmpty, Actions } from './actions'
 import { storeMiddlewares, epicMiddleware } from './utils/storeUtils'
-import { actionEmpty, Actions } from 'actions'
 import { App } from './App'
 
 const store = createStore(rootReducer, storeMiddlewares)

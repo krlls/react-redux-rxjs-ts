@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 
 import './app.scss'
 
-import { State } from 'store'
-import { Action, actionEmpty, Actions } from 'actions'
+import { State } from '../store'
+import { Action, actionEmpty, Actions } from '../actions'
 import { Header } from './Header'
 import { Readme } from './Readme'
 
@@ -26,7 +26,7 @@ class AppCmp extends React.Component<TProps> {
     return (
       <div>
         <Header headerTitle={header} buttonOnClick={sendHi} />
-        <Readme content={content}/>
+        <Readme content={content} />
       </div>
     )
   }

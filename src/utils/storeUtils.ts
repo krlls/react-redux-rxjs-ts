@@ -9,9 +9,7 @@ import { State } from '../store'
 const IS_DEV = process.env.NODE_ENV === 'development'
 export const epicMiddleware = createEpicMiddleware<Action, Action, State>({})
 
-const middlewares = applyMiddleware(...[
-  epicMiddleware,
-])
+const middlewares = applyMiddleware(...[epicMiddleware])
 
 const composeEnhancers = composeWithDevTools({
   actionSanitizer,

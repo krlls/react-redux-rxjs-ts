@@ -1,4 +1,3 @@
-
 export type AE<T> = { type: T }
 export type A<T, D> = {
   type: T,
@@ -18,11 +17,7 @@ export namespace Actions {
   export type GetReadmeSuccess = A<typeof GET_README_SUCCESS, any>
 }
 
-export type Action =
-  Actions.SendHi
-  | Actions.TestEpic
-  | Actions.GetReadme
-  | Actions.GetReadmeSuccess
+export type Action = Actions.SendHi | Actions.TestEpic | Actions.GetReadme | Actions.GetReadmeSuccess
 
 export const actionEmpty = <T>(type: T) => ({ type })
 export const action = <T, D>(type: T, data: D) => ({ type, data })

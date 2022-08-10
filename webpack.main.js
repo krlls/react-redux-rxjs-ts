@@ -9,10 +9,7 @@ module.exports = {
   performance: { hints: false },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/, loader: 'awesome-typescript-loader',
-        options: {configFileName: 'src/tsconfig.json'}
-      },
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.(png|svg|jpg|gif)$/,
         loader: 'file-loader',

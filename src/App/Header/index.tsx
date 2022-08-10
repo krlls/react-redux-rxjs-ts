@@ -1,11 +1,10 @@
 import * as React from 'react'
-
-import styles from './index.scss'
-
-import { Action } from 'actions'
 import ReactLogo from 'svg/reactLogo.svg'
 import ReduxObserbleLogo from 'svg/reduxObservable.svg'
 import ReduxLogo from 'svg/reduxLogo.svg'
+
+import { Action } from '../../actions'
+import styles from './index.scss'
 
 type OwnProps = {
   headerTitle: string,
@@ -20,9 +19,7 @@ class HeaderCmp extends React.Component<OwnProps> {
     return (
       <div className={styles.Header}>
         <div className={styles.Title}>
-          <h1 className={styles.Title__h1}>
-            {headerTitle}
-          </h1>
+          <h1 className={styles.Title__h1}>{headerTitle}</h1>
           {this.renderLogos()}
           {this.renderButton()}
         </div>
@@ -34,10 +31,7 @@ class HeaderCmp extends React.Component<OwnProps> {
     const { buttonOnClick } = this.props
 
     return (
-      <button
-        className={styles.Title__button_hi}
-        onClick={buttonOnClick}
-      >
+      <button className={styles.Title__button_hi} onClick={buttonOnClick}>
         Send Hi
       </button>
     )
@@ -47,13 +41,13 @@ class HeaderCmp extends React.Component<OwnProps> {
     return (
       <div className={styles.Title__logo__container}>
         <div className={styles.Title__logo}>
-          <img src={ReactLogo} alt={'react-logo'}/>
+          <img src={ReactLogo} alt={'react-logo'} />
         </div>
         <div className={styles.Title__logo}>
-          <img src={ReduxLogo} alt={'redux-logo'}/>
+          <img src={ReduxLogo} alt={'redux-logo'} />
         </div>
         <div className={styles.Title__logo}>
-          <img src={ReduxObserbleLogo} alt={'Redux-Obserble-logo'}/>
+          <img src={ReduxObserbleLogo} alt={'Redux-Obserble-logo'} />
         </div>
       </div>
     )

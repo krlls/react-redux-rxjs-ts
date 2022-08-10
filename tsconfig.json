@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "lib": ["dom", "es2015"],
+    "jsx": "react",
+    "sourceMap": true,
+    "removeComments": true,
+    "importHelpers": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "paths": {
+      "*": ["*"]
+    },
+    "typeRoots": ["../types",
+      "./node_modules/@types"
+    ]
+  }
+}
