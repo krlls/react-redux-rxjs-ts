@@ -17,10 +17,7 @@ export const defState = {
   data: '',
 }
 
-export const contentState: Reducer<TContentState, Action> = (
-  state = defState,
-  action,
-): TContentState => {
+export const contentState: Reducer<TContentState, Action> = (state = defState, action): TContentState => {
   switch (action.type) {
     case Actions.SEND_HI:
       return {

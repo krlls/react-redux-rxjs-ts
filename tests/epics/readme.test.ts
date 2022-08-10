@@ -1,12 +1,12 @@
 import configureMockStore, { MockStore } from 'redux-mock-store'
 import Axios from 'axios-observable'
-import { of } from 'rxjs'
 
 import { getReadmeEpic } from '../../src/epics'
 import { contentState, defState } from '../../src/store/header'
 import { Actions, actionEmpty, action } from '../../src/actions'
 import { createMiddleware, DeepPartial } from './epicHelpers'
 import { State } from '../../src/store'
+import { of } from "rxjs";
 
 const spyAxios = Axios
 
@@ -30,7 +30,9 @@ describe('DataEpic', () => {
   it('Get README Success', () => {
     const data = 'Test'
 
-    spyOn(spyAxios, 'get').and.returnValue(of({data}))
+   jest.spyOn(spyAxios, 'get').mockReturnValue(of({data}) as any)
+
+
     store.dispatch(actionEmpty(Actions.GET_README))
 
 
