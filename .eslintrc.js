@@ -8,7 +8,12 @@ module.exports = {
   globals: {
     'process': true,
   },
+  'ignorePatterns': ['gulpfile.js', 'gulp/**/*', 'webpack.*', 'jest.*'],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    //Todo Temporary fix, see https://github.com/typescript-eslint/typescript-eslint/issues/6934
+    warnOnUnsupportedTypeScriptVersion: false,
+  },
   plugins: [
     '@typescript-eslint',
     'eslint-plugin-import',
@@ -22,12 +27,12 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-namespace': 'off',
-    '@typescript-eslint/prefer-as-const': 'off',
     'quotes': ['error', 'single'],
     'no-unused-vars': 'off',
     'no-dupe-else-if': 'off',
     'no-console': ['error'],
     'no-debugger': ['error'],
+    'no-empty': ['error', { 'allowEmptyCatch': true }],
     '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '_' }],
     '@typescript-eslint/member-delimiter-style': [
       'warn',
@@ -47,19 +52,18 @@ module.exports = {
       {
         'pathGroups': [
           {
-            'pattern': `{${FILE_PATCH}}/types/*`,
-            'group': 'index'
+            'pattern': `{${FILE_PATCH}}/types`,
+            'group': 'internal'
           },
         ],
         'newlines-between': 'always',
-        'groups': ['external', 'index', ['parent', 'sibling']]
+        'groups': ['external', 'index', 'internal', ['parent', 'sibling']]
       }
     ],
   },
   overrides: [
     {
-      'files': ['**/*.ts', '**/*.tsx',  '**/*.*.tsx'],
+      'files': ['**/*.ts', '**/*.tsx',  '**/*.tsx'],
     }
-  ],
-  'ignorePatterns': ['**/*.js']
+  ]
 }

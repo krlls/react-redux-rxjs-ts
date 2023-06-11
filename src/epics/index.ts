@@ -1,8 +1,8 @@
 import { combineEpics, Epic, ofType } from 'redux-observable'
-import { mapTo, delay, tap, mergeMap, map, filter } from 'rxjs/operators'
+import { mapTo, delay, tap, mergeMap, map, filter } from 'rxjs'
 import Axios from 'axios-observable'
 
-import { action, actionEmpty, Action, Actions } from '../actions'
+import { action, actionEmpty, Action, Actions } from "../actions"
 import { State } from '../store'
 
 const testEpic: EpicFunc = (action$) =>

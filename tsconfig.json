@@ -20,7 +20,8 @@
     "paths": {
       "*": ["*"]
     },
-    "typeRoots": ["../types",
+    "typeRoots": [
+      "../types",
       "./node_modules/@types"
     ]
   }

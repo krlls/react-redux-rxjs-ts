@@ -1,6 +1,6 @@
 # React-Redux-RxJs-TypeScript
 
-![](./logo.png)
+![](https://github.com/krlls/React-Redux-RxJs-TypeScript/raw/master/logo.png)
 
 ## Install
 First, clone the repo via git:

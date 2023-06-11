@@ -1,11 +1,12 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const path = require('path');
 
 const PATH_SRC = path.resolve(__dirname, 'src')
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   performance: { hints: false },
   module: {
     rules: [
@@ -46,12 +47,12 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".css", ".scss"],
+    extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
     modules: [].concat(PATH_SRC, 'node_modules'),
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html"
+      template: './public/index.html'
     }),
   ]
 };
