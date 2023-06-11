@@ -5,15 +5,15 @@ export type A<T, D> = {
 }
 
 export namespace Actions {
-  export const SEND_HI: 10 = 10
+  export const SEND_HI = 10 as const
   export type SendHi = AE<typeof SEND_HI>
 
-  export const TEST_EPIC: 11 = 11
+  export const TEST_EPIC = 11 as const
   export type TestEpic = AE<typeof TEST_EPIC>
 
-  export const GET_README: 20 = 20
+  export const GET_README = 20 as const
   export type GetReadme = AE<typeof GET_README>
-  export const GET_README_SUCCESS: 21 = 21
+  export const GET_README_SUCCESS = 21 as const
   export type GetReadmeSuccess = A<typeof GET_README_SUCCESS, any>
 }
 
